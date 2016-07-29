@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    script(src="/plugins/jquery.min.js")
+    script(src="/plugins/jquery.easings.min.js")
+    script(src="/plugins/scrolloverflow.min.js")
+    script(src="/plugins/fullpage/jquery.fullpage.min.js")
+    script(src="/plugins/socket.io-1.4.5.js")
+    link(href="/plugins/fullpage/jquery.fullpage.min.css" type="text/css" rel="stylesheet")
+    include style.pug
+  body
+    #fullpage
+        |!{html}
+    #pages
+    include js.pug

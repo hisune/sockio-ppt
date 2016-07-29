@@ -1,0 +1,55 @@
+script(type='text/javascript').
+    // fullpage
+    $(document).ready(function() {
+        var name = '#{name}',
+            key = '#{key}',
+            length = $('#fullpage').find('.section').length,
+            anchors = [],
+            settings = {
+                anchors: anchors,
+                onLeave: function(index, nextIndex, direction){
+                     $('#pages').text(nextIndex + '/'+length);
+                     if(name == 'ctrl'){
+                        roll(nextIndex);
+                     }
+                }
+            };
+        $('#pages').text('1/'+length);
+        for(var i = 1; i <= length; i++)
+            anchors.push('anchors-' + i);
+
+        if(typeof options == 'undefined') options = {};
+        $('#fullpage').fullpage($.extend(settings, options));
+
+        // socket.io
+        var socket = io(document.location.origin, {transports: ['websocket'], query: name + '=' + key}),
+            roll = function(index){
+                socket.emit('roll', {index: index}, function(){});
+            },
+            click = function(){
+                socket.emit('click', {}, function(){});
+            },
+            doSlide = function(){
+                $('.section').filter(function() {
+                    return $(this).hasClass('active');
+                }).children('.fp-tableCell').find('.hidden').filter(function() {
+                    return $(this).css('opacity') == 0;
+                }).first().animate({opacity: 1}, 1000);
+            };
+
+        if(name == 'pug'){
+            socket.on('roll', function(data){
+                $.fn.fullpage.moveTo('anchors-' + data.index);
+            });
+            socket.on('click', function(data){
+                doSlide();
+            });
+        }else if(name == 'ctrl'){
+            $('.section').click(function(){
+                click();
+                doSlide();
+            });
+        }
+    });
+
+
