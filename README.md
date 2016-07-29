@@ -1,6 +1,6 @@
 sockio-ppt
 -----
-SockIO PPT, the programmer's PPT!A simple nodejs PPT service.Write a pug template as a online PPT!
+SockIO PPT, the programmer's PPT!A simple nodejs PPT service that support remote control.Write a pug template as a online PPT!
 
 Requirement
 -----
