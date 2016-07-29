@@ -101,3 +101,7 @@ About author
 Offical site
 -----
 [SockIO](https://sockio.com)
+
+License
+-----
+MIT
