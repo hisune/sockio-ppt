@@ -1,6 +1,6 @@
 sockio-ppt
 -----
-SockIO PPT, the programmer's PPT!
+SockIO PPT, the programmer's PPT! Write a pug template as a online PPT!
 
 Requirement
 -----
@@ -14,6 +14,7 @@ cd sockio-ppt
 cp config.default.js config.js # then modify your config.js
 node server
 ```
+Then, write a [pug](https://github.com/pugjs/pug) template and copy it to ```ppts``` folder.
 
 Generate a client side online PPT url
 -----
