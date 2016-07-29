@@ -11,6 +11,7 @@ How to install
 ```bash
 git clone https://github.com/hisune/sockio-ppt.git
 cd sockio-ppt
+npm install
 cp config.default.js config.js # then modify your config.js
 node server
 ```
