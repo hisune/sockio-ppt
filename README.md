@@ -50,7 +50,7 @@ server{
 		proxy_pass http://127.0.0.1:3000;
 	}
 
-	access_log  /data/wwwlogs/sockio.com.log  access;
+	access_log  /path_to_your_log_dir/sockio.com.log  access;
 }
 server{
 	listen 80;
