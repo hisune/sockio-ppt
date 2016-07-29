@@ -16,7 +16,7 @@ Requirement
 -----
 nodejs 4.+ version
 
-How to install
+How to use it?
 -----
 ```bash
 git clone https://github.com/hisune/sockio-ppt.git
