@@ -8,16 +8,16 @@ nodejs 4.+ version
 
 How to install
 -----
-```sh
+```bash
 git clone https://github.com/hisune/sockio-ppt.git
 cd sockio-ppt
 cp config.default.js config.js # then modify your config.js
 node server
 ```
-Then, write a [pug](https://github.com/pugjs/pug) template and copy it to ```ppts``` folder.
+Then, write a [pug](https://github.com/pugjs/pug) template and copy it to `ppts` folder.
 
-demo.pug
-```html
+`demo.pug`
+```pug
 style.
     .center{
         max-width: 200px;
@@ -52,14 +52,14 @@ script(type='text/javascript').
 
 Generate a client side online PPT url
 -----
-```sh
+```bash
 # node generate pug_name [pug or ctrl] [link number] [expire sec]
 node generate demo pug 5 60 # Generate 5 client side urls whitch will expired after 1 minute
 ```
 Generate a control side online PPT url
 -----
 whitch you can open it in mobile to control client side PPT
-```sh
+```bash
 # node generate pug_name [pug or ctrl] [link number] [expire sec]
 node generate demo ctrl 1 60 # Generate a client side url whitch will expired after 1 minute
 ```
@@ -67,7 +67,7 @@ node generate demo ctrl 1 60 # Generate a client side url whitch will expired af
 Use nginx SSL
 -----
 
-```sh
+```bash
 server{
 	listen 443;
 	ssl on;
