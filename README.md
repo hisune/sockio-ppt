@@ -1,6 +1,9 @@
 sockio-ppt
 -----
-SockIO PPT, the programmer's PPT!A simple nodejs PPT service that support remote control.Write a pug template as a online PPT!
+SockIO PPT, the programmer's PPT!A simple nodejs PPT service that support remote control.Write a `pug` template as a online PPT!
+
+SockIO PPT, 程序猿的PPT，支持远程控制多个PPT client端，解决远程PPT遥控问题。
+不再需要人肉翻页PPT，不再需要共享屏幕。PPT书写简单快捷，只要你懂`pug`模版格式就能很快的写出你的PPT！
 
 Requirement
 -----
