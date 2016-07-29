@@ -16,6 +16,9 @@
     "pug": "2.0.0-beta3",
     "socket.io": "1.4.5"
   },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "keywords": [
     "nodejs",
     "sockio",
