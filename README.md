@@ -16,6 +16,40 @@ node server
 ```
 Then, write a [pug](https://github.com/pugjs/pug) template and copy it to ```ppts``` folder.
 
+demo.pug
+```html
+style.
+    .center{
+        max-width: 200px;
+    }
+
+.section.active
+    h1 SockIO PPT, the programmer's PPT!
+.section
+    h1 test2
+    .center
+        p.hidden hidden slide test 1
+        p.hidden hidden slide 2
+        p.hidden hidden slide test 3
+        p.hidden hidden slide test test 4
+.section
+    h1 test3
+    .center
+        p.hidden hidden slide test 1
+        p.hidden hidden slide 2
+        p.hidden hidden slide test 3
+        p.hidden hidden slide test test 4
+.section
+    h1 test4
+.section
+    h1 test5
+
+script(type='text/javascript').
+    var options = {
+        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff']
+    };
+```
+
 Generate a client side online PPT url
 -----
 ```sh
