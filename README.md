@@ -5,6 +5,8 @@ SockIO PPT, the programmer's PPT!A simple nodejs PPT service that support remote
 SockIO PPT, 程序猿的PPT，支持远程控制多个PPT client端，解决远程PPT遥控问题。
 不再需要人肉翻页PPT，不再需要共享屏幕。PPT书写简单快捷，只要你懂`pug`模版格式就能很快的写出你的PPT！
 
+[https://hisune.com/view/42/sockio-ppt-remote-control-html-ppt](https://hisune.com/view/42/sockio-ppt-remote-control-html-ppt)
+
 Feature
 -----
 - 简单，常用PPT展示功能实现。嗯，代码也很简单
