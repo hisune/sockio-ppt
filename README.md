@@ -7,6 +7,8 @@ SockIO PPT, 程序猿的PPT，支持远程控制多个PPT client端，解决远�
 
 [https://hisune.com/view/42/sockio-ppt-remote-control-html-ppt](https://hisune.com/view/42/sockio-ppt-remote-control-html-ppt)
 
+[Online demo](https://sockio.com/ppt?ctrl=d279530ed2537ecdea2d51e3)
+
 Feature
 -----
 - 简单，常用PPT展示功能实现。嗯，代码也很简单

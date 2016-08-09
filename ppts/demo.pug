@@ -1,30 +1,70 @@
-style.
-    .center{
-        max-width: 200px;
-    }
+link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/androidstudio.min.css")
+script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js")
+script(src="//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js")
 
-.section.active
+.section
     h1 SockIO PPT, the programmer's PPT!
+    h2
+        a(href="https://github.com/hisune/sockio-ppt" target="_blank") https://github.com/hisune/sockio-ppt
 .section
-    h1 test2
-    .center
-        p.hidden hidden slide test 1
-        p.hidden hidden slide 2
-        p.hidden hidden slide test 3
-        p.hidden hidden slide test test 4
+    h1 Feature
+    .center-table(style="max-width: 80%;")
+        h2.hidden
+            b ●简单
+            p.vw2 常用PPT展示功能均已经实现。除此之外，嗯，代码也很简单；
+        h2.hidden
+            b ● 快捷
+            p.vw2
+                |仅需编写简单的
+                a(href="https://github.com/pugjs/pug" target="_blank") pug
+                |模板即可生成PPT，特别适合程序猿；
+        h2.hidden
+            b ● 安全
+            p.vw2 演示端URL和控制端URL均在命令行生成，且可自定义失效时间，再也不怕某些国内浏览器上报你访问的URL泄漏隐私；
+        h2.hidden
+            b ● 智能
+            p.vw2 一个控制端URL可实时控制多个演示端URL，解决跨地域PPT分享痛点，再也无需在远程人肉操作PPT或共享屏幕，释放双手用到他该用的地方。
 .section
-    h1 test3
-    .center
-        p.hidden hidden slide test 1
-        p.hidden hidden slide 2
-        p.hidden hidden slide test 3
-        p.hidden hidden slide test test 4
+    h1 HTTP - ajax轮询
+    .left.hidden.center-table(style="text-indent: 8vw;")
+        h2 client: 有消息吗？(req)
+        h2 server: 木有(res)
+        h2 client: 有消息吗？(req)
+        h2 server: 木有！(res)
+        h2 client: 有消息吗？(req)
+        h2 server: 木有！！！(res)
+        h2 client: 有消息吗？(req)
+        h2 server: 。。。木有！！！(res)
+    .right.hidden
+        pre
+            code
+                |var ajax = function()
+                |{
+                |    $.ajax({
+                |        url: 'http://xxoo.com/xxoo',
+                |        success: function(ret){
+                |            // ... do something
+                |            setTimeout(ajax, 2000);
+                |        }
+                |    });
+                |};
+                |ajax();
 .section
-    h1 test4
+    h1 来张图片
+    div(style="height: 40vh")
+        img(src="/demo/girl.jpg")
 .section
-    h1 test5
-
+    h1 Q & A
+    .left
+        p PPT URL
+        #qrcode-ppt
+    .right
+        p SockIO PPT 项目地址
+        #qrcode-sockio
 script(type='text/javascript').
     var options = {
-        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff']
+        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', '#fff', 'whitesmoke']
     };
+    hljs.initHighlightingOnLoad();
+    $('#qrcode-ppt').qrcode({width: 200,height: 200,text: window.location.href.split('#')[0]});
+    $('#qrcode-sockio').qrcode({width: 200,height: 200,text: 'https://github.com/hisune/sockio-ppt'});
