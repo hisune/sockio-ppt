@@ -1,6 +1,7 @@
 doctype html
 html(lang="en")
   head
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title= title
     script(src="/plugins/jquery.min.js")
     script(src="/plugins/jquery.easings.min.js")
@@ -12,7 +13,6 @@ html(lang="en")
   body
     #fullpage
         |!{html}
-    #right-bottom
-        #fullscreen(onclick="toggleFullScreen()") ※
+    #right-bottom(onclick="toggleFullScreen();")
         #pages
     include js.pug
