@@ -66,5 +66,13 @@ script(type='text/javascript').
         sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', '#fff', 'whitesmoke']
     };
     hljs.initHighlightingOnLoad();
-    $('#qrcode-ppt').qrcode({width: 200,height: 200,text: window.location.href.split('#')[0]});
-    $('#qrcode-sockio').qrcode({width: 200,height: 200,text: 'https://github.com/hisune/sockio-ppt'});
+    var initQrcode = function()
+    {
+        var qrcodeWidth = $(window).width() / 4;
+        $('#qrcode-ppt').empty().qrcode({width: qrcodeWidth,height: qrcodeWidth,text: window.location.href.split('#')[0]});
+        $('#qrcode-sockio').empty().qrcode({width: qrcodeWidth,height: qrcodeWidth,text: 'https://github.com/hisune/sockio-ppt'});
+    };
+    window.onresize = function(event) {
+        initQrcode();
+    };
+    initQrcode();
