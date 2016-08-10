@@ -76,7 +76,7 @@ script(src="//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min
                 |var ajax = function()
                 |{
                 |    $.ajax({
-                |        url: 'http://xxoo.com/xxoo',
+                |        url: 'http://sockio.com',
                 |        success: function(ret){
                 |            // ... do something
                 |            setTimeout(ajax, 2000);
