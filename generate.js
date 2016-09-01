@@ -21,22 +21,24 @@ if(!fs.existsSync(__dirname + '/ppts/' + process.argv[2] + '.pug')){
     process.exit(1)
 }
 
-let count = 0, generateName = 'pug', generateExpire = 0;
+let count = 0, generateName = 'pug', generateExpire = config.generate_default_timeout, now = Date.now() / 1000 | 0;
 if(process.argv[3] && (process.argv[3] == 'pug' || process.argv[3] == 'ctrl'))
     generateName = process.argv[3];
 if(process.argv[4])
     count = parseInt(process.argv[4]);
 if(process.argv[5])
     generateExpire = parseInt(process.argv[5]);
-if(count < 1) count = config.generate_default_num;
-if(generateExpire < 10) generateExpire = config.generate_default_timeout;
+if(count < 1)
+    count = config.generate_default_num;
+if(generateExpire != 0)
+    generateExpire = generateExpire + now;
 
 let generateDir = __dirname + '/generate/' + generateName + '/';
 // 过期检测
-let generates = fs.readdirSync(generateDir), now = Date.now() / 1000 | 0;
+let generates = fs.readdirSync(generateDir);
 generates.forEach((item) => {
     let file = generateDir + item, content = fs.readFileSync(file).toString().split(',');
-    if(now > content[1])
+    if(now > content[1] && content[1] != 0)
         fs.unlinkSync(file);
 });
 
@@ -44,7 +46,7 @@ console.log('generate ' + count + ' ' + generateName + ' key:');
 for(let i = 0; i < count; i++){
     require('crypto').randomBytes(12, (err, buffer) => {
         let token = buffer.toString('hex');
-        fs.writeFileSync(generateDir + token, process.argv[2] + ',' + (generateExpire + now));
+        fs.writeFileSync(generateDir + token, process.argv[2] + ',' + generateExpire);
         console.log(config.url + 'ppt?' + generateName + '=' + token);
     });
 }

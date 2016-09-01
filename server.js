@@ -39,7 +39,10 @@ var validateGenerate = function(query)
                 let now = Date.now() / 1000 | 0, content = fs.readFileSync(file).toString().split(',');
                 ret.ppt = content[0];
                 ret.expire = content[1];
-                if(now > ret.expire){
+                if(ret.expire == 0)
+                    fs.unlink(file);
+                else if(now > ret.expire){
+                    fs.unlink(file);
                     ret.err = 'generate out of date';
                 }
             }catch(e){
