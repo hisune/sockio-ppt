@@ -118,6 +118,7 @@ Generate a client side online PPT url
 ```bash
 # node generate pug_name [pug or ctrl] [link number] [expire sec]
 node generate demo pug 5 60 # Generate 5 client side urls whitch will expired after 1 minute
+# if set `expire sec` to 0, the link will be only allowed to open once 
 ```
 Generate a control side online PPT url
 -----
