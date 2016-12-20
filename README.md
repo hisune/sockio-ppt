@@ -11,10 +11,19 @@ SockIO PPT, 程序猿的PPT，支持远程控制多个PPT client端，解决远�
 
 Feature
 -----
-- 简单，常用PPT展示功能实现。嗯，代码也很简单
+- 简单，常用PPT展示功能实现，包括翻页、点击显示、提示器。嗯，代码也很简单
 - 快捷，仅需编写简单的`pug`模板即可生成PPT，特别适合程序猿
 - 安全，演示端URL和控制端URL均在命令行生成，且可自定义`失效时间`，再也不怕某些国内浏览器上报你访问的URL泄漏隐私
 - 智能，一个控制端URL可`实时控制`多个演示端URL，解决跨地域PPT分享痛点，再也无需在远程人肉操作PPT或共享屏幕
+
+QA
+-----
+- 每一页PPT是如何定义的？
+ - 一个`.section`类即一页PPT。
+- 如何自定义我自己的样式？
+ - 在`views/style.pug`中定义了很多公用样式，你可以在你自己的ppt的pug文件中插入style标签定义自己的属性，例如demo中的`.customer_css`
+- 如何实现一个提示器？
+ - 在你的ppt的put文件中插入`.prompt`即可，例如demo中的第一个section中的`h3.prompt`，此类中的文字将仅在手机中可见，可用作手机端的提示器
 
 Requirement
 -----
@@ -37,10 +46,16 @@ link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/
 script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js")
 script(src="//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js")
 
+style.
+    .customer_css{
+    
+    }
+
 .section
     h2 SockIO PPT, the programmer's PPT!
     h3
         a(href="https://github.com/hisune/sockio-ppt" target="_blank") https://github.com/hisune/sockio-ppt
+    h3.prompt .prompt类起到提示器的作用，仅手机端可见，用来提示内容，例如：大家好，接下来由我来简单分享一下这次的会议内容。
 .section
     h2 Feature
     .center-table(style="max-width: 80%;")
