@@ -24,6 +24,7 @@ QA
  - 在`views/style.pug`中定义了很多公用样式，你可以在你自己的ppt的pug文件中插入style标签定义自己的属性，例如demo中的`.customer_css`
 - 如何实现一个提示器？
  - 在你的ppt的put文件中插入`.prompt`即可，例如demo中的第一个section中的`h3.prompt`，此类中的文字将仅在手机中可见，可用作手机端的提示器
+ - 如果你在某一个`.section`中加入过`.prompt`，请在所有`.section`中加入`.prompt`，sockio-ppt会将`.prompt`类的出现当作启动和关闭提示器的开关
 
 Requirement
 -----

@@ -22,6 +22,10 @@ script(type='text/javascript').
     }
     // fullpage
     $(document).ready(function() {
+        if($('.prompt').length > 0){
+            $('.section').addClass('section-prompt');
+        }
+
         var name = '#{name}',
             key = '#{key}',
             length = $('#fullpage').find('.section').length,
