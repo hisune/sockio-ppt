@@ -158,12 +158,13 @@ style.
 
     .section-prompt .fp-tableCell .prompt{
         display: none;
+        text-align: left;
     }
     @media screen and (max-width: 500px) {
         .section-prompt .fp-tableCell * {
             display: none;
         }
-        .section-prompt .fp-tableCell .prompt, .fp-tableCell .fp-tableCell .prompt * {
-            display: block !important;
+        .section-prompt .fp-tableCell .prompt, .fp-tableCell .prompt * {
+            display: inline-block !important;
         }
     }
