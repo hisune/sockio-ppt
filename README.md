@@ -48,17 +48,36 @@ script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js
 script(src="//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js")
 
 style.
-    .customer_css{
-    
+    .customer_css {
+
+    }
+    .left-top-vw {
+        border-bottom: solid 2px #771074;
+        width: 100%;
+        text-align: left;
+        margin-top: 2vh;
+        height: 8vh;
+        font-size: 4vh;
+    }
+    .right-top {
+        height: 5vh;
+        margin-top: 2vh;
+    }
+    .bb1 {
+        background-color: #00B050;
+        color: #fff;
+        display: inline;
+        padding: .5vh 3vw;
+        width: 30vw;
     }
 
 .section
-    h2 SockIO PPT, the programmer's PPT!
+    h2 SockIO PPT, the programmer's PPT!，滑动/滚动/上下键 翻页
     h3
         a(href="https://github.com/hisune/sockio-ppt" target="_blank") https://github.com/hisune/sockio-ppt
     h3.prompt .prompt类起到提示器的作用，仅手机端可见，用来提示内容，例如：大家好，接下来由我来简单分享一下这次的会议内容。
 .section
-    h2 Feature
+    h2 Feature，点击/触摸显示隐藏内容
     .center-table(style="max-width: 80%;")
         .hidden
             h3 ●简单
@@ -76,7 +95,17 @@ style.
             h3 ● 智能
             h4 一个控制端URL可实时控制多个演示端URL，解决跨地域PPT分享痛点，再也无需在远程人肉操作PPT或共享屏幕。
 .section
-    h1 HTTP - ajax轮询
+    .left-top.left-top-vw 顶部样式是这样的
+    img.right-top(src="./report/mob.png")
+    div.center-table
+        h4.bb1 快使用双截棍
+        h5 ● 哼哼哈嘿
+        h4.bb1 习武之人切记
+        h5 ● 仁者无敌
+    h4.prompt
+        | 周杰伦
+.section
+    h1 HTTP - ajax轮询，代码高亮
     .left.hidden.center-table(style="text-indent: 8vw;")
         h4 client: 有消息吗？(req)
         h4 server: 木有(res)
@@ -114,7 +143,7 @@ style.
         #qrcode-sockio
 script(type='text/javascript').
     var options = {
-        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', '#fff', 'whitesmoke']
+        sectionsColor: ['#f2f2f2', '#4BBFC3', '#fff', '#7BAABE', 'whitesmoke']
     };
     hljs.initHighlightingOnLoad();
     var initQrcode = function()
